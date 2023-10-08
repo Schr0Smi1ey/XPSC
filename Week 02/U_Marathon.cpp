@@ -6,18 +6,15 @@ using namespace std;
 const int INF = 1e18;
 #define getbit(n,i) ((n) & (1LL<<(i)))
 void solution(){
-    int n,x;cin >> n;
-    set<int> st;
-    for(int i=0;i<n;i++){
-        cin >> x;
-        st.insert(x);
+    int x = 3,a,y,cnt = 0;
+    cin >> a;
+    while(x--){
+        cin >> y;
+        if(y > a){
+            cnt++;
+        }
     }
-    if((n-st.size()) % 2 == 0){
-        cout << st.size() << endl;
-    }
-    else{
-        cout << st.size() - 1 << endl;
-    }
+    cout << cnt << endl;
 }
 signed main()
 {

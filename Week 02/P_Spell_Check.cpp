@@ -6,17 +6,16 @@ using namespace std;
 const int INF = 1e18;
 #define getbit(n,i) ((n) & (1LL<<(i)))
 void solution(){
-    int n,x;cin >> n;
-    set<int> st;
-    for(int i=0;i<n;i++){
-        cin >> x;
-        st.insert(x);
-    }
-    if((n-st.size()) % 2 == 0){
-        cout << st.size() << endl;
+    int n;cin >> n;
+    string fixed = "Timur" , str;
+    sort(fixed.begin(),fixed.end());
+    cin >> str;
+    sort(str.begin(),str.end());
+    if(str == fixed){
+        cout << "YES" << endl;
     }
     else{
-        cout << st.size() - 1 << endl;
+        cout << "NO" << endl;
     }
 }
 signed main()

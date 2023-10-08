@@ -5,26 +5,18 @@ using namespace std;
 #define int long long int
 const int INF = 1e18;
 #define getbit(n,i) ((n) & (1LL<<(i)))
-void solution(){
-    int n,x;cin >> n;
-    set<int> st;
-    for(int i=0;i<n;i++){
-        cin >> x;
-        st.insert(x);
-    }
-    if((n-st.size()) % 2 == 0){
-        cout << st.size() << endl;
-    }
-    else{
-        cout << st.size() - 1 << endl;
-    }
-}
 signed main()
 {
     fastio;
     int t;cin >> t;
+    string fixed = "yes";
     while(t--){
-        solution();
+        string str;cin >> str;
+        bool flag = true;
+        for(int i=0;i<3;i++){
+            flag &= (tolower(str[i]) == fixed[i]);
+        }
+        puts(flag?"YES":"NO");
     }
     return 0;
 }
