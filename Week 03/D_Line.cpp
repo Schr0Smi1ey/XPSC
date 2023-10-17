@@ -48,7 +48,7 @@ void solution(){
             auto y = make_pair(pq.top().first+x.first,pq.top().second+x.second);
             pq.pop();
             pq.push(y);
-            // cout << "After push : " << pq.top().first << " " << pq.top().second << endl;
+            // cout << "After pus : " << pq.top().first << " " << pq.top().second << endl;
         }
         cout << temp << " ";
     }
@@ -56,7 +56,7 @@ void solution(){
 }
 signed main()
 {
-    // fastio;
+    fastio;
     int t;cin >> t;
     while(t--){
         solution();
