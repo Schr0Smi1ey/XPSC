@@ -5,22 +5,20 @@ using namespace std;
 #define int long long int
 void solution(){
     int n;cin >> n;
-    if(n == 3){
-        cout << -1 << endl;
-        return ;
+    int arr[n];
+    map<int,int> mp;
+    for(int i=0;i<n;i++){
+        cin >> arr[i];
+        mp[arr[i]]++;
     }
-    int k = 1;
-    while(true){
-        cout << n-- << " ";
-        k++;
-        if(n == k || n == 0){
-            break;
+    int ans = 0;
+    for(int i=0;i<n;i++){
+        if(mp[arr[i]] > 1){
+            ans = max(ans,(i+1LL));
+            mp[arr[i]]--;
         }
     }
-    for(int i=1;i<=n;i++){
-        cout << i << " ";
-    }
-    cout << endl;
+    cout << ans << endl;
 }
 signed main()
 {
