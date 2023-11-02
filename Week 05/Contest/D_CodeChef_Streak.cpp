@@ -25,7 +25,6 @@ void solution(){
         cin >> addy[i];
     }
     int p = days(om,n),q = days(addy,n);
-    // cout << p << " " << q << endl; 
     if(p == q){
         cout << "Draw" << endl;
     }

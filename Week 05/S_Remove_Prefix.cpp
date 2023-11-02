@@ -5,18 +5,19 @@ using namespace std;
 #define int long long int
 void solution(){
     int n;cin >> n;
-    string str,ans = "";cin >> str;
-    for(int i=n-1;i>=0;i--){
-        if(str[i] == '0'){
-            string temp;temp+=str[i-2];temp+=str[i-1];
-            ans += 'a' + ((size_t)(stoll(temp)) - 1);
-            i -= 2;
-        }
-        else{
-            ans += 'a' + (str[i] - '0' - 1);
+    int arr[n];
+    map<int,int> mp;
+    for(int i=0;i<n;i++){
+        cin >> arr[i];
+        mp[arr[i]]++;
+    }
+    int ans = 0;
+    for(int i=0;i<n;i++){
+        if(mp[arr[i]] > 1){
+            ans = max(ans,(i+1LL));
+            mp[arr[i]]--;
         }
     }
-    reverse(ans.begin(),ans.end());
     cout << ans << endl;
 }
 signed main()
@@ -26,4 +27,5 @@ signed main()
     while(t--){
         solution();
     }
+    return 0;
 }
