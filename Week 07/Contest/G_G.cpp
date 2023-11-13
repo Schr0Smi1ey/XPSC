@@ -4,26 +4,22 @@ using namespace std;
 #define endl "\n"
 #define int long long int
 void solution(){
-    int n;cin >> n;
-    int s[n],f[n];
+    int n,k;cin >> n >> k;
+    int arr[n],b[n];
     for(int i=0;i<n;i++){
-        cin >> s[i];
+        cin >> arr[i];
+        b[i] = arr[i];
     }
+    vector<int> v;
     for(int i=0;i<n;i++){
-        cin >> f[i];
+        if(i-0 < k && n-i-1 < k)continue;
+        v.push_back(arr[i]);
     }
-    bool flag = true;
-    for(int i= 0;i<n;i++){
-        if(flag){
-            cout << f[i] - s[i] << " ";
-        }
-        else{
-            cout << f[i] - f[i-1] << " ";
-        }
-        if(s[i+1] < f[i]) flag = false;
-        else{
-            flag = true;
-        }
+    sort(v.begin(),v.end());
+    int j = 0;
+    for(int i=0;i<n;i++){
+        if(i-0 < k && n-i-1 < k) cout << arr[i] << " ";
+        else cout << v[j++] << " ";
     }
     cout << endl;
 }
