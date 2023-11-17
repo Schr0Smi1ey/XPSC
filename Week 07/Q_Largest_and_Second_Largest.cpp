@@ -3,16 +3,19 @@ using namespace std;
 #define fastio ios_base::sync_with_stdio(false),cin.tie(0),cout.tie(0);
 #define endl "\n"
 #define int long long int
-const int MOD = 1e9 + 7;
 void solution(){
-    int n,k;cin >> n >> k;
-    int cnt = 1;
+    int n;cin >> n;
+    int arr[n];
     for(int i=0;i<n;i++){
-        if(k == 0) break;
-        cnt = (cnt * k) % MOD;
-        k--;
+        cin >> arr[i];
     }
-    cout << cnt << endl;
+    sort(arr,arr+n,greater<int>());
+    for(int i=1;i<n;i++){
+        if(arr[i] != arr[0]){
+            cout << arr[i] + arr[0] << endl;
+            return;
+        }
+    }
 }
 signed main()
 {

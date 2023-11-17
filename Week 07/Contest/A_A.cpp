@@ -16,7 +16,7 @@ void solution(){
     }
     sort(a.begin(),a.end(),greater<char>());
     sort(b.begin(),b.end(),greater<char>());
-        int c = stoll(a),d = stoll(b);
+    int c = stoll(a),d = stoll(b);
     if(c == d){
         cout << "Tie" << endl;
     }
