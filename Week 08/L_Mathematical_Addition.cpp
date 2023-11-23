@@ -4,18 +4,8 @@ using namespace std;
 #define endl "\n"
 #define int long long int
 void solution(){
-    int n;cin >> n;
-    int arr[n-1];
-    int sum = 0;
-    for(int i=0;i<n-1;i++){
-        arr[i] = i+2;
-        sum += arr[i];
-    }
-    cout << ((sum/n)+1)*n - sum << " ";
-    for(auto x : arr){
-        cout << x << " ";
-    }
-    cout << endl;
+    int u,v;cin >> u >> v;
+    cout << -((u*u)) << " " << (v*v) << endl;
 }
 signed main()
 {
