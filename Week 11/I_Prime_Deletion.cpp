@@ -15,10 +15,10 @@ typedef pair<int,int> pii;
 void solution(){
     string s;cin >> s;
     if(s.find("1") > s.find("3")){
-        cout << "13" << endl;
+        cout << "31" << endl;
     }
     else{
-        cout << "31" << endl;
+        cout << "13" << endl;
     }
 }
 
