@@ -9,30 +9,33 @@ using namespace std;
 #define HERE
 #define debug(args...)
 #endif
-typedef pair<int,int> pii;
 const int MOD = 1e9 + 7;
 const int INF = 1e18;
 const int N = 2e5 +5;
 
 void solution(){
     int n;cin >> n;
-    int arr[n];int z = 0,o = 0,one = 0,zero = 0;
-    bool ze = true,on = true;
+    vector<pair<int,int>> v(n);
     for(int i=0;i<n;i++){
-        cin >> arr[i];
-        if(arr[i] == 0 && ze) {ze = false;one = o;}
-        if(arr[i] == 1) o++;
-        else z++;
+        cin >> v[i].first;
     }
-    int cnt = 0,temp = 0;
-    for(int i=n-1;i>=0;i--){
-        if(arr[i] == 0) temp++;
-        else {
-            if(on){on = false;zero = temp;}
-            cnt+= temp;
+    for(int i=0;i<n;i++){
+        cin >> v[i].second;
+    }
+    sort(v.begin(),v.end(),[](const auto &x,const auto &y){
+        return (x.second - x.first) < (y.second - y.first);
+    });
+    int cnt = 0,i = 0, j = n-1;
+    while(i >= 0 && j >= 0 && i < n && j < n && i < j){
+        int p = v[i].second - v[i].first,q = v[j].second - v[j].first;
+        if(p + q >= 0){
+            cnt++;i++;j--;
+        }
+        else{
+            i++;
         }
     }
-    cout << max({cnt,cnt - one + z - 1,cnt - zero + o - 1}) << endl;
+    cout << cnt << endl;
 }
 
 int32_t main(){
